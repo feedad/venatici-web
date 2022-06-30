@@ -6,15 +6,16 @@ import navPast from '../assets/images/nav-past.svg';
 import navNft from '../assets/images/nav-nft.svg';
 import navRug from '../assets/images/nav-rug.svg';
 import navAbout from '../assets/images/nav-about.svg';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const menuList = [
-    { name: 'Home', icon: navHome },
-    { name: 'Upcoming', icon: navUpcoming },
-    { name: 'Past', icon: navPast },
-    { name: 'Venatici NFT', icon: navNft },
-    { name: 'Rug', icon: navRug },
-    { name: 'About', icon: navAbout },
+    { name: 'Home', icon: navHome, url: '/' },
+    { name: 'Upcoming', icon: navUpcoming, url: '/upcoming' },
+    { name: 'Past', icon: navPast, url: '/past' },
+    { name: 'Venatici NFT', icon: navNft, url: '/nft' },
+    { name: 'Rug', icon: navRug, url: '/rug' },
+    { name: 'About', icon: navAbout, url: '/about' },
   ];
 
   return (
@@ -23,10 +24,12 @@ export default function Navbar() {
       <div className='d-flex align-items-center' style={{ backgroundColor: '#0A0A0A', gap: 35, padding: '10px 30px', flexGrow: 1, boxShadow: 'inset 0 -10px 10px -10px #fff', borderRadius: 10 }}>
         {menuList.map(menu => {
           return (
-            <div>
-              <img src={menu.icon} alt="" style={{ width: 27, height: 27 }} />
-              <span className='fw-bold'>{menu.name}</span>
-            </div>
+            <Link to={menu.url} style={{ textDecoration: 'none', color: 'white' }}>
+              <div>
+                <img src={menu.icon} alt="" style={{ width: 27, height: 27 }} />
+                <span className='fw-bold'>{menu.name}</span>
+              </div>
+            </Link>
           )
         })}
         <div className='text-end' style={{ flexGrow: 1 }}>

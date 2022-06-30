@@ -11,6 +11,7 @@ import IconCooldown from '../assets/images/home-cooldown.svg';
 import IconMintPage from '../assets/images/home-mint-page.svg';
 import IconShortNotice from '../assets/images/home-short-notice.svg';
 import IconSupport from '../assets/images/home-support.svg';
+import Footer from '../components/Footer';
 
 export default function HomePage() {
   const featuresList = [
@@ -70,7 +71,7 @@ export default function HomePage() {
       {/* home: minting now */}
       <div className="px-5" style={{ marginBottom: 200 }}>
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Minting Now</div>
-        <div className="row row-cols-3 g-5">
+        <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-2 g-5">
           {[0, 1, 2, 3, 4, 5].map(item => {
             return (
               <div>
@@ -84,7 +85,7 @@ export default function HomePage() {
       {/* home: popular launches */}
       <div className="px-5" style={{ marginBottom: 200 }}>
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Popular Launches</div>
-          <div className="row row-cols-3 g-5">
+          <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-2 g-5">
           {[0, 1, 2, 3, 4, 5].map(item => {
             return (
               <div>
@@ -135,16 +136,7 @@ export default function HomePage() {
       </div>
 
       {/* home: footer */}
-      <div className='px-5 mb-5 d-flex text-muted' style={{ gap: 20, fontSize: '1.5rem' }}>
-        <div>
-          <i className="fa fa-envelope me-2"></i>
-          <span>venaticinft@gmail.com</span>
-        </div>
-        <div>
-          <i className="far fa-copyright me-2"></i>
-          <span>VENATICI.IO 2022</span>
-        </div>
-      </div>
+      <Footer/>
     </div>
   )
 }
