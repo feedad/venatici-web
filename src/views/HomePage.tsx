@@ -34,10 +34,10 @@ export default function HomePage() {
   ];
 
   return (
-    <div>
+    <div className='container'>
 
       {/* home: top */}
-      <div className='px-5' style={{ position: 'relative', marginBottom: 800 }}>
+      <div style={{ marginBottom: 800 }}>
 
         {/* bg earth */}
         <img src={require('../assets/images/home-bg.png')} alt="" style={{ position: 'absolute', height: '200vh', right: 0 }} />
@@ -54,9 +54,11 @@ export default function HomePage() {
         </div>
 
         {/* venacity logo */}
-        <img src={HomeVenacity} alt="" style={{ position: 'absolute', right: 200, top: 400 }} />
+        <img src={HomeVenacity} alt="" className='floating' style={{ position: 'absolute', right: 200, top: 400 }} />
 
-        <Navbar/>
+        <div className='position-relative'>
+          <Navbar/>
+        </div>
         <section>
           <div style={{ width: 640, marginTop: 120 }}>
             <div className='fw-bold mb-4' style={{ fontSize: '3rem' }}>A Revenue Sharing Launchpad on Solana</div>
@@ -69,12 +71,12 @@ export default function HomePage() {
       </div>
 
       {/* home: minting now */}
-      <div className="px-5" style={{ marginBottom: 200 }}>
+      <div style={{ marginBottom: 200 }}>
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Minting Now</div>
-        <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-2 g-5">
+        <div className="row row-cols-xl-3 row-cols-2 g-5">
           {[0, 1, 2, 3, 4, 5].map(item => {
             return (
-              <div>
+              <div key={item}>
                 <CardNft/>
               </div>
             );
@@ -83,12 +85,12 @@ export default function HomePage() {
       </div>
 
       {/* home: popular launches */}
-      <div className="px-5" style={{ marginBottom: 200 }}>
+      <div style={{ marginBottom: 200 }}>
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Popular Launches</div>
-          <div className="row row-cols-xl-4 row-cols-lg-3 row-cols-2 g-5">
+          <div className="row row-cols-xl-3 row-cols-2 g-5">
           {[0, 1, 2, 3, 4, 5].map(item => {
             return (
-              <div>
+              <div key={item}>
                 <CardNft/>
               </div>
             );
@@ -97,11 +99,11 @@ export default function HomePage() {
       </div>
 
       {/* home: popular launches (2) */}
-      <div className="px-5 mb-5">
+      <div className="mb-5">
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Popular Launches</div>
         <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 gx-5 gy-2">
           {featuresList.map(feature => (
-            <div className='text-center p-5'>
+            <div className='text-center p-5' key={feature.name}>
               <img src={feature.icon} alt="" className='mb-2' />
               <div className='fw-bold mb-3' style={{ color: '#3CD79F', fontSize: '1.5rem' }}>{feature.name}</div>
               <div>{feature.desc}</div>
@@ -111,12 +113,12 @@ export default function HomePage() {
       </div>
 
       {/* home: bottom */}
-      <div className='px-5 mb-5 d-flex align-items-top' style={{ gap: 10 }}>
+      <div className='mb-5 d-flex align-items-top' style={{ gap: 10 }}>
         <div style={{ flexGrow: 1 }}>
           <div className='text-center fw-bold mb-5' style={{ fontSize: '3rem' }}>Manage Your Mint</div>
           <div className='text-start mx-auto' style={{ width: 440 }}>
-            {manageYourMintList.map(text => (
-              <div className='mb-3 fw-bold'>
+            {manageYourMintList.map((text, i) => (
+              <div className='mb-3 fw-bold' key={i}>
                 <i className="fa fa-check-circle me-3" style={{ color: '#3CD79F', fontSize: '1.2rem' }}></i>
                 <span>{text}</span>
               </div>
@@ -125,7 +127,7 @@ export default function HomePage() {
         </div>
         <img src={require('../assets/images/home-bottom-separator.png')} alt="" style={{ height: 450, marginTop: -40 }} />
         <div className='position-relative' style={{ flexGrow: 1 }}>
-          <img src={require('../assets/images/home-community-bg.png')} alt="" style={{ position: 'absolute', right: 150, top: 0, height: 350 }} />
+          <img src={require('../assets/images/home-community-bg.png')} alt="" style={{ position: 'absolute', right: 0, top: 0, height: 350 }} />
           <div className='text-center fw-bold mb-5 position-relative' style={{ fontSize: '3rem' }}>Join Our Community</div>
           <div className='d-flex justify-content-between mx-auto position-relative' style={{ width: 400 }}>
             <i className="fab fa-discord fa-3x"></i>

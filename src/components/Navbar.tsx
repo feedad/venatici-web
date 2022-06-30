@@ -24,8 +24,8 @@ export default function Navbar() {
       <div className='d-flex align-items-center' style={{ backgroundColor: '#0A0A0A', gap: 35, padding: '10px 30px', flexGrow: 1, boxShadow: 'inset 0 -10px 10px -10px #fff', borderRadius: 10 }}>
         {menuList.map(menu => {
           return (
-            <Link to={menu.url} style={{ textDecoration: 'none', color: 'white' }}>
-              <div>
+            <Link to={menu.url} key={menu.url} style={{ textDecoration: 'none', color: 'white' }}>
+              <div style={{ whiteSpace: 'nowrap' }}>
                 <img src={menu.icon} alt="" style={{ width: 27, height: 27 }} />
                 <span className='fw-bold'>{menu.name}</span>
               </div>

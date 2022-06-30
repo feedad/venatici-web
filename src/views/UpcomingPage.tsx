@@ -24,7 +24,7 @@ export default function UpcomingPage() {
         </div>
         <div className='text-center' style={{ flexGrow: 1 }}>
           <div className='p-3 d-inline-block mb-4' style={{ border: 'solid 3px #fff3', borderBottomLeftRadius: '1rem', borderBottomRightRadius: '1rem', borderTopLeftRadius: '50%', borderTopRightRadius: '50%' }}>
-            <img src="https://picsum.photos/1366/768" alt="" style={{ width: 400, height: 400, borderBottomLeftRadius: '1rem', borderBottomRightRadius: '1rem', borderTopLeftRadius: '50%', borderTopRightRadius: '50%', }} />
+            <img src="https://picsum.photos/1366/768" alt="" style={{ width: 400, height: 400, objectFit: 'cover', borderBottomLeftRadius: '1rem', borderBottomRightRadius: '1rem', borderTopLeftRadius: '50%', borderTopRightRadius: '50%', }} />
           </div>
           <div className='d-flex justify-content-center align-items-center' style={{ gap: 20 }}>
             <div>
