@@ -1,3 +1,3 @@
-# Venaciti
+# Venatici
 
-Website for Venaciti Project.
+Website for Venatici Project.
