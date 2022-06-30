@@ -1,3 +1,3 @@
-# Venacity
+# Venaciti
 
-Website for Venacity Project.
+Website for Venaciti Project.
