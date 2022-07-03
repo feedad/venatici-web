@@ -20,7 +20,9 @@ export default function AboutPage() {
   return (
     <>
       <div className='container' style={{ marginBottom: '8rem' }}>
-        <Navbar/>
+        <div className="position-relative" style={{ zIndex: 100 }}>
+          <Navbar/>
+        </div>
 
         {/* about: top */}
         <div style={{ marginBottom: '6rem' }}>

@@ -9,7 +9,7 @@ export default function UpcomingPage() {
       <Navbar/>
 
       {/* upcoming: head */}
-      <div className='d-flex align-items-center mt-5 mb-5' style={{ gap: 50 }}>
+      <div className='d-flex align-items-center mt-5' style={{ gap: 50, marginBottom: '8rem' }}>
         <div>
           <div className='fw-bold mb-2' style={{ fontSize: '3rem' }}>Affine Transformations</div>
           <div className='d-flex align-items-center mb-4' style={{ gap: 20, color: '#3CD79F' }}>
