@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './styles/styles.scss';
 import AboutPage from './views/AboutPage';
+import AuthPage from './views/AuthPage';
 import HomePage from './views/HomePage';
 import NftPage from './views/NftPage';
 import PastPage from './views/PastPage';
@@ -16,6 +17,8 @@ function App() {
         <Route path='past' element={<PastPage/>}></Route>
         <Route path='nft' element={<NftPage/>}></Route>
         <Route path='about' element={<AboutPage/>}></Route>
+
+        <Route path='login' element={<AuthPage/>}></Route>
       </Routes>
     </Router>
   );
