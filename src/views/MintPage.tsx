@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar'
 import ProgressBar from '../components/ProgressBar'
 
@@ -19,7 +20,11 @@ export default function MintPage() {
               Total Items 100 | Price 3.00 <i className="fa fa-coin"></i>
             </div>
             <div className='mt-4'>
-              <button className="btn btn-white px-4 rounded-pill fw-bold" style={{ transform: 'none' }}>View Collection</button>
+              <Link to={'/nft'}>
+                <button className="btn btn-white px-4 rounded-pill fw-bold" style={{ transform: 'none' }}>
+                  View Collection
+                </button>
+              </Link>
             </div>
           </div>
         </div>
