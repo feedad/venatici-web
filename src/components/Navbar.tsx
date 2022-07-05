@@ -18,7 +18,7 @@ export default function Navbar() {
       { name: 'Affine Transformations', desc: 'by Nick Schlax' },
       { name: 'Signal Boost', desc: 'by Jack Dupp' },
     ] },
-    { name: 'Rug', icon: navRug, url: '/rug' },
+    { name: 'Mint', icon: navRug, url: '/mint' },
     { name: 'About', icon: navAbout, url: '/about' },
   ];
 

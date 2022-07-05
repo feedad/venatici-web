@@ -1,3 +1,15 @@
 label.label {
   margin-bottom: 10px;
 }
+
+input {
+  &.form-check-input {
+    &[type=checkbox] {
+      border-color: var(--bs-white);
+
+      &:checked {
+        border-color: var(--bs-primary);
+      }
+    }
+  }
+}

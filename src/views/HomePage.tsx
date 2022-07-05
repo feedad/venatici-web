@@ -43,8 +43,8 @@ export default function HomePage() {
         <img src={require('../assets/images/home-bg.png')} alt="" style={{ position: 'absolute', height: '200vh', right: 0 }} />
 
         {/* about us */}
-        <div style={{ position: 'absolute', left: 0, top: 520, width: 1600 }}>
-          <img src={require('../assets/images/home-about-bg.png')} className="w-100" alt="" style={{  }} />
+        <div style={{ position: 'absolute', left: 0, top: 520, maxWidth: '95vw', overflowX: 'clip', overflowY: 'visible' }}>
+          <img src={require('../assets/images/home-about-bg.png')} alt="" style={{ width: 1600 }} />
           <div style={{ width: 600, marginLeft: 60, marginTop: -800 }}>
             <button className="btn btn-black-gradient mb-4 px-4">
               <div className="content">Find out more</div>
