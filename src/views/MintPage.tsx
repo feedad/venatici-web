@@ -44,6 +44,9 @@ export default function MintPage(props: MintPageProps) {
     severity: undefined,
   });
 
+  const nftShowcase = process.env.REACT_APP_SAMPLE_MINT_NFT
+    || 'https://picsum.photos/1366/1366';
+
   const wallet = useWallet();
   const anchorWallet = useMemo(() => {
     if (
@@ -205,6 +208,7 @@ export default function MintPage(props: MintPageProps) {
           setIsActive((cndy.state.isActive = active));
           setIsPresale((cndy.state.isPresale = presale));
           setCandyMachine(cndy);
+          console.log(cndy);
 
           const txnEstimate =
             892 +
@@ -452,7 +456,7 @@ export default function MintPage(props: MintPageProps) {
 
       <div className="d-flex mb-4" style={{ gap: 20 }}>
         <div className='text-center' style={{ flexGrow: 1 }}>
-          <img src="https://picsum.photos/1366/1366" alt="" className='rounded mb-4 d-block mx-auto' style={{ width: 460, height: 460, objectFit: 'cover' }} />
+          <img src={nftShowcase} alt="" className='rounded mb-4 d-block mx-auto' style={{ width: 460, height: 460, objectFit: 'cover' }} />
           {candyMachine?.state && (
             <>
               <div className='text-center mx-auto' style={{ width: 430 }}>
@@ -479,8 +483,8 @@ export default function MintPage(props: MintPageProps) {
           )}
         </div>
         <div>
-          <div className='fw-bold' style={{ fontSize: 42 }}>Affine Transformations</div>
-          <div style={{ fontSize: 32 }}>by Nick Schlax</div>
+          <div className='fw-bold' style={{ fontSize: 42 }}>Macaca Club</div>
+          <div style={{ fontSize: 32 }}>by Macaca Club</div>
           <div className='d-flex mb-3 mt-3' style={{ gap: 30, fontSize: 28 }}>
             <i className="far fa-globe"></i>
             <i className="fab fa-discord"></i>
