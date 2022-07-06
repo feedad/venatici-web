@@ -37,7 +37,7 @@ export default function Navbar() {
           )
 
           else return (
-            <Dropdown>
+            <Dropdown key={menu.url}>
               <Dropdown.Toggle as={dropdownMenuItem}>
                 <div style={{ whiteSpace: 'nowrap' }}>
                   <img src={menu.icon} alt="" style={{ width: 27, height: 27 }} />
@@ -46,7 +46,7 @@ export default function Navbar() {
               </Dropdown.Toggle>
               <Dropdown.Menu>
                 {menu.children.map(child => (
-                  <Dropdown.Item>
+                  <Dropdown.Item key={child.name}>
                     <Link to={menu.url} key={menu.url} style={{ textDecoration: 'none', color: 'black' }}>
                       <div className='fw-bold'>{child.name}</div>
                       <div style={{ fontSize: 12 }}>{child.desc}</div>
