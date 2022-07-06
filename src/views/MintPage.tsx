@@ -607,7 +607,7 @@ export default function MintPage(props: MintPageProps) {
               </>
             )}
           </div>
-          {candyMachine && (
+          {/* {candyMachine && (
             <div className='d-flex' style={{ gap: 25 }}>
               <MintCountdown
                 date={undefined}
@@ -622,7 +622,7 @@ export default function MintPage(props: MintPageProps) {
                 color={'primary'}
               />
             </div>
-          )}
+          )} */}
         </div>
       </div>
 
