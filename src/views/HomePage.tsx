@@ -95,7 +95,7 @@ export default function HomePage() {
           {mintingNowList.map((item, i) => {
             return (
               <div key={i}>
-                <CardNft name={item.name} image={item.image} />
+                <CardNft name={item.name} image={item.image} live />
               </div>
             );
           })}
