@@ -43,7 +43,7 @@ export default function HomePage() {
   ];
 
   const popularLaunchesList = [
-    { name: 'Famous Fox Federetion', image: require('assets/images/popular-launches/famous-fox-federation.jpg') },
+    { name: 'Famous Fox Federation', image: require('assets/images/popular-launches/famous-fox-federation.jpg') },
     { name: 'Just Ape', image: require('assets/images/popular-launches/just-ape.png') },
     { name: 'Okay Bears', image: require('assets/images/popular-launches/okay-bears.png') },
     { name: 'Primates', image: require('assets/images/popular-launches/primates.png') },
