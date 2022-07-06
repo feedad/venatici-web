@@ -33,6 +33,24 @@ export default function HomePage() {
     '"Powered By Venatici" seal of authenticity.'
   ];
 
+  const mintingNowList = [
+    { name: 'Azuki', image: require('assets/images/minting-now/azuki.png') },
+    { name: 'Bored Ape Yacht Club', image: require('assets/images/minting-now/bored-ape-yacht-club.png') },
+    { name: 'Clone X - X Takashi Murakami', image: require('assets/images/minting-now/clone-x-takashi-murakami.png') },
+    { name: 'CryptoPunks', image: require('assets/images/minting-now/cryptopunks.png') },
+    { name: 'Doodles', image: require('assets/images/minting-now/doodles.png') },
+    { name: 'Moonbirds', image: require('assets/images/minting-now/moonbirds.avif') },
+  ];
+
+  const popularLaunchesList = [
+    { name: 'Famous Fox Federetion', image: require('assets/images/popular-launches/famous-fox-federation.jpg') },
+    { name: 'Just Ape', image: require('assets/images/popular-launches/just-ape.png') },
+    { name: 'Okay Bears', image: require('assets/images/popular-launches/okay-bears.png') },
+    { name: 'Primates', image: require('assets/images/popular-launches/primates.png') },
+    { name: 'Stoned Ape Crew', image: require('assets/images/popular-launches/stoned-ape-crew.png') },
+    { name: 'Trippin\' Ape Tribe', image: require('assets/images/popular-launches/trippin-ape-tribe.png') },
+  ];
+
   return (
     <div className='container'>
 
@@ -74,10 +92,10 @@ export default function HomePage() {
       <div style={{ marginBottom: 200 }}>
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Minting Now</div>
         <div className="row row-cols-xl-3 row-cols-2 g-5">
-          {[0, 1, 2, 3, 4, 5].map(item => {
+          {mintingNowList.map((item, i) => {
             return (
-              <div key={item}>
-                <CardNft/>
+              <div key={i}>
+                <CardNft name={item.name} image={item.image} />
               </div>
             );
           })}
@@ -88,10 +106,10 @@ export default function HomePage() {
       <div style={{ marginBottom: 200 }}>
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Popular Launches</div>
           <div className="row row-cols-xl-3 row-cols-2 g-5">
-          {[0, 1, 2, 3, 4, 5].map(item => {
+          {popularLaunchesList.map((item, i) => {
             return (
-              <div key={item}>
-                <CardNft/>
+              <div key={i}>
+                <CardNft name={item.name} image={item.image} />
               </div>
             );
           })}
