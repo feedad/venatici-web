@@ -17,6 +17,7 @@ import { ConnectionProvider, WalletProvider } from '@solana/wallet-adapter-react
 import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import * as anchor from '@project-serum/anchor';
 import { DEFAULT_TIMEOUT } from './candyMachine/connection';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   const solNetwork = WalletAdapterNetwork.Devnet;
@@ -32,7 +33,6 @@ function App() {
   );  
 
   const getCandyMachineId = (): anchor.web3.PublicKey | undefined => {
-    console.log(process.env);
     try {
       const candyMachineId = new anchor.web3.PublicKey(
         process.env.REACT_APP_CANDY_MACHINE_ID!,
@@ -58,6 +58,7 @@ function App() {
         <WalletModalProvider>
           <Router>
             <div style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+              <ToastContainer />
               <Routes>
                 <Route path='/' element={<HomePage/>}></Route>
                 <Route path='upcoming' element={<UpcomingPage/>}></Route>

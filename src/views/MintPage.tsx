@@ -16,6 +16,7 @@ import { sendTransaction } from '../candyMachine/connection';
 import { GatewayProvider } from '@civic/solana-gateway-react';
 import { MintButton } from '../candyMachine/MintButton';
 import MintCountdown from '../components/MintCountdown';
+import { toast } from 'react-toastify';
 
 interface MintPageProps {
   candyMachineId?: anchor.web3.PublicKey;
@@ -225,39 +226,43 @@ export default function MintPage(props: MintPageProps) {
             if (
               e.message === `Account does not exist ${props.candyMachineId}`
             ) {
-              setAlertState({
-                open: true,
-                message: `Couldn't fetch candy machine state from candy machine with address: ${props.candyMachineId}, using rpc: ${props.rpcHost}! You probably typed the REACT_APP_CANDY_MACHINE_ID value in wrong in your .env file, or you are using the wrong RPC!`,
-                severity: 'error',
-                hideDuration: null,
-              });
+              toast.error(`Couldn't fetch candy machine state from candy machine with address: ${props.candyMachineId}, using rpc: ${props.rpcHost}! You probably typed the REACT_APP_CANDY_MACHINE_ID value in wrong in your .env file, or you are using the wrong RPC!`)
+              // setAlertState({
+              //   open: true,
+              //   message: `Couldn't fetch candy machine state from candy machine with address: ${props.candyMachineId}, using rpc: ${props.rpcHost}! You probably typed the REACT_APP_CANDY_MACHINE_ID value in wrong in your .env file, or you are using the wrong RPC!`,
+              //   severity: 'error',
+              //   hideDuration: null,
+              // });
             } else if (
               e.message.startsWith('failed to get info about account')
             ) {
-              setAlertState({
-                open: true,
-                message: `Couldn't fetch candy machine state with rpc: ${props.rpcHost}! This probably means you have an issue with the REACT_APP_SOLANA_RPC_HOST value in your .env file, or you are not using a custom RPC!`,
-                severity: 'error',
-                hideDuration: null,
-              });
+              toast.error(`Couldn't fetch candy machine state with rpc: ${props.rpcHost}! This probably means you have an issue with the REACT_APP_SOLANA_RPC_HOST value in your .env file, or you are not using a custom RPC!`);
+              // setAlertState({
+              //   open: true,
+              //   message: `Couldn't fetch candy machine state with rpc: ${props.rpcHost}! This probably means you have an issue with the REACT_APP_SOLANA_RPC_HOST value in your .env file, or you are not using a custom RPC!`,
+              //   severity: 'error',
+              //   hideDuration: null,
+              // });
             }
           } else {
-            setAlertState({
-              open: true,
-              message: `${e}`,
-              severity: 'error',
-              hideDuration: null,
-            });
+            toast.error(`${e}`);
+            // setAlertState({
+            //   open: true,
+            //   message: `${e}`,
+            //   severity: 'error',
+            //   hideDuration: null,
+            // });
           }
           console.log(e);
         }
       } else {
-        setAlertState({
-          open: true,
-          message: `Your REACT_APP_CANDY_MACHINE_ID value in the .env file doesn't look right! Make sure you enter it in as plain base-58 address!`,
-          severity: 'error',
-          hideDuration: null,
-        });
+        toast.error(`Your REACT_APP_CANDY_MACHINE_ID value in the .env file doesn't look right! Make sure you enter it in as plain base-58 address!`);
+        // setAlertState({
+        //   open: true,
+        //   message: `Your REACT_APP_CANDY_MACHINE_ID value in the .env file doesn't look right! Make sure you enter it in as plain base-58 address!`,
+        //   severity: 'error',
+        //   hideDuration: null,
+        // });
       }
     },
     [anchorWallet, props.candyMachineId, props.rpcHost],
@@ -273,11 +278,12 @@ export default function MintPage(props: MintPageProps) {
       if (wallet.connected && candyMachine?.program && wallet.publicKey) {
         let setupMint: SetupState | undefined;
         if (needTxnSplit && setupTxn === undefined) {
-          setAlertState({
-            open: true,
-            message: 'Please sign account setup transaction',
-            severity: 'info',
-          });
+          toast.info('Please sign account setup transaction');
+          // setAlertState({
+          //   open: true,
+          //   message: 'Please sign account setup transaction',
+          //   severity: 'info',
+          // });
           setupMint = await createAccountsForMint(
             candyMachine,
             wallet.publicKey,
@@ -293,27 +299,30 @@ export default function MintPage(props: MintPageProps) {
           }
           if (status && !status.err) {
             setSetupTxn(setupMint);
-            setAlertState({
-              open: true,
-              message:
-                'Setup transaction succeeded! Please sign minting transaction',
-              severity: 'info',
-            });
+            toast.info('Setup transaction succeeded! Please sign minting transaction');
+            // setAlertState({
+            //   open: true,
+            //   message:
+            //     'Setup transaction succeeded! Please sign minting transaction',
+            //   severity: 'info',
+            // });
           } else {
-            setAlertState({
-              open: true,
-              message: 'Mint failed! Please try again!',
-              severity: 'error',
-            });
+            toast.error('Mint failed! Please try again;!')
+            // setAlertState({
+            //   open: true,
+            //   message: 'Mint failed! Please try again!',
+            //   severity: 'error',
+            // });
             setIsUserMinting(false);
             return;
           }
         } else {
-          setAlertState({
-            open: true,
-            message: 'Please sign minting transaction',
-            severity: 'info',
-          });
+          toast.info('Please sign minting transaction');
+          // setAlertState({
+          //   open: true,
+          //   message: 'Please sign minting transaction',
+          //   severity: 'info',
+          // });
         }
 
         let mintResult = await mintOneToken(
@@ -350,28 +359,31 @@ export default function MintPage(props: MintPageProps) {
           setIsActive((candyMachine.state.isActive = remaining > 0));
           candyMachine.state.isSoldOut = remaining === 0;
           setSetupTxn(undefined);
-          setAlertState({
-            open: true,
-            message: 'Congratulations! Mint succeeded!',
-            severity: 'success',
-            hideDuration: 7000,
-          });
+          toast.success('Congratulations! Mint succeeded!');
+          // setAlertState({
+          //   open: true,
+          //   message: 'Congratulations! Mint succeeded!',
+          //   severity: 'success',
+          //   hideDuration: 7000,
+          // });
           refreshCandyMachineState('processed');
         } else if (status && !status.err) {
-          setAlertState({
-            open: true,
-            message:
-              'Mint likely failed! Anti-bot SOL 0.01 fee potentially charged! Check the explorer to confirm the mint failed and if so, make sure you are eligible to mint before trying again.',
-            severity: 'error',
-            hideDuration: 8000,
-          });
+          toast.error('Mint likely failed! Anti-bot SOL 0.01 fee potentially charged! Check the explorer to confirm the mint failed and if so, make sure you are eligible to mint before trying again.');
+          // setAlertState({
+          //   open: true,
+          //   message:
+          //     'Mint likely failed! Anti-bot SOL 0.01 fee potentially charged! Check the explorer to confirm the mint failed and if so, make sure you are eligible to mint before trying again.',
+          //   severity: 'error',
+          //   hideDuration: 8000,
+          // });
           refreshCandyMachineState();
         } else {
-          setAlertState({
-            open: true,
-            message: 'Mint failed! Please try again!',
-            severity: 'error',
-          });
+          toast.error('Mint failed! Please try again!');
+          // setAlertState({
+          //   open: true,
+          //   message: 'Mint failed! Please try again!',
+          //   severity: 'error',
+          // });
           refreshCandyMachineState();
         }
       }
@@ -396,11 +408,12 @@ export default function MintPage(props: MintPageProps) {
         }
       }
 
-      setAlertState({
-        open: true,
-        message,
-        severity: 'error',
-      });
+      toast.error(message);
+      // setAlertState({
+      //   open: true,
+      //   message,
+      //   severity: 'error',
+      // });
       // updates the candy machine state to reflect the latest
       // information on chain
       refreshCandyMachineState();
@@ -528,31 +541,34 @@ export default function MintPage(props: MintPageProps) {
                         sig.publicKey.equals(wallet.publicKey!),
                       );
                       if (userMustSign) {
-                        setAlertState({
-                          open: true,
-                          message: 'Please sign one-time Civic Pass issuance',
-                          severity: 'info',
-                        });
+                        toast.info('Please sign one-time Civic Pass issuance');
+                        // setAlertState({
+                        //   open: true,
+                        //   message: 'Please sign one-time Civic Pass issuance',
+                        //   severity: 'info',
+                        // });
                         try {
                           transaction = await wallet.signTransaction!(
                             transaction,
                           );
                         } catch (e) {
-                          setAlertState({
-                            open: true,
-                            message: 'User cancelled signing',
-                            severity: 'error',
-                          });
+                          toast.error('User cancelled signing');
+                          // setAlertState({
+                          //   open: true,
+                          //   message: 'User cancelled signing',
+                          //   severity: 'error',
+                          // });
                           // setTimeout(() => window.location.reload(), 2000);
                           setIsUserMinting(false);
                           throw e;
                         }
                       } else {
-                        setAlertState({
-                          open: true,
-                          message: 'Refreshing Civic Pass',
-                          severity: 'info',
-                        });
+                        toast.info('Refreshing Civic Pass');
+                        // setAlertState({
+                        //   open: true,
+                        //   message: 'Refreshing Civic Pass',
+                        //   severity: 'info',
+                        // });
                       }
                       try {
                         await sendTransaction(
@@ -563,18 +579,20 @@ export default function MintPage(props: MintPageProps) {
                           true,
                           'confirmed',
                         );
-                        setAlertState({
-                          open: true,
-                          message: 'Please sign minting',
-                          severity: 'info',
-                        });
+                        toast.info('Please sign minting');
+                        // setAlertState({
+                        //   open: true,
+                        //   message: 'Please sign minting',
+                        //   severity: 'info',
+                        // });
                       } catch (e) {
-                        setAlertState({
-                          open: true,
-                          message:
-                            'Solana dropped the transaction, please try again',
-                          severity: 'warning',
-                        });
+                        toast.warning('Solana dropped the transaction, please try again');
+                        // setAlertState({
+                        //   open: true,
+                        //   message:
+                        //     'Solana dropped the transaction, please try again',
+                        //   severity: 'warning',
+                        // });
                         console.error(e);
                         // setTimeout(() => window.location.reload(), 2000);
                         setIsUserMinting(false);

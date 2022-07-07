@@ -1,8 +1,6 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom';
 import LogoVenatici from '../assets/images/home-venacity.svg';
-import AuthLogin from '../components/AuthLogin';
-import AuthRegister from '../components/AuthRegister';
 
 export default function AuthPage() {
   return (
@@ -19,8 +17,6 @@ export default function AuthPage() {
       </div>
 
       <div style={{ width: 350, position: 'relative' }}>
-        {/* <AuthLogin/> */}
-        {/* <AuthRegister/> */}
         <Outlet/>
         <Link to={'/'}>
           <div className='d-flex align-items-center justify-content-center text-muted' style={{ gap: 20 }}>

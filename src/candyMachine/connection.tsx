@@ -540,7 +540,7 @@ async function awaitTransactionSignatureConfirmation(
   });
 
   //@ts-ignore
-  if (connection._signatureSubscriptions[subId])
+  if (connection._signatureSubscriptions?.[subId])
     connection.removeSignatureListener(subId);
   done = true;
   console.log('Returning status', status);

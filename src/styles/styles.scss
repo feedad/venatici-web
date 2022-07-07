@@ -52,6 +52,9 @@
 // solana wallet
 @import '@solana/wallet-adapter-react-ui/styles.css';
 
+// react-toastify
+@import 'react-toastify/dist/ReactToastify.css';
+
 // import local styles
 @import "./buttons";
 @import "./navbar";
