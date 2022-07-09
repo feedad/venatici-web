@@ -18,6 +18,7 @@ import { WalletModalProvider } from '@solana/wallet-adapter-react-ui';
 import * as anchor from '@project-serum/anchor';
 import { DEFAULT_TIMEOUT } from './candyMachine/connection';
 import { ToastContainer } from 'react-toastify';
+import AuthPasswordForget from 'components/AuthPasswordForget';
 
 function App() {
   const solNetwork = WalletAdapterNetwork.Devnet;
@@ -79,6 +80,7 @@ function App() {
                   <Route path="" element={<Navigate to={'login'} replace/>}/>
                   <Route path='login' element={<AuthLogin/>}/>
                   <Route path='register' element={<AuthRegister/>}/>
+                  <Route path='forget' element={<AuthPasswordForget/>}/>
                 </Route>
               </Routes>
             </div>
