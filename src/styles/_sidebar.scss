@@ -1,0 +1,44 @@
+.sidebar {
+  width: 200px;
+
+  .account {
+    display: flex;
+    border: solid 1px var(--bs-primary);
+    border-radius: 500px;
+    margin-bottom: 20px;
+
+    img.profile-picture {
+      border-radius: 50%;
+      height: 50px;
+      width: 50px;
+    }
+
+    .name {
+      display: flex;
+      align-items: center;
+      padding: 0px 20px;
+    }
+  }
+
+  .item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 20px 10px;
+    cursor: pointer;
+    color: var(--bs-white);
+
+    &.active {
+      box-shadow: inset 15px 0px 20px -15px rgba(255,255,255,0.4);
+    }
+
+    img.icon {
+      height: 25px;
+      width: 25px;
+    }
+
+    .label {
+      font-weight: bold;
+    }
+  }
+}

@@ -2,6 +2,16 @@ label.label {
   margin-bottom: 10px;
 }
 
+.label-with-sublabel {
+  .label {
+    font-size: 1.5rem;
+  }
+
+  .sublabel {
+    margin-bottom: 10px;
+  }
+}
+
 input {
   &.form-check-input {
     &[type=checkbox] {
@@ -12,4 +22,15 @@ input {
       }
     }
   }
+}
+
+.form-control {
+  &.form-control-grey {
+    background-color: rgba(var(--bs-white-rgb), .1);
+    border-color: rgba(var(--bs-white-rgb), .2);
+  }
+}
+
+textarea {
+  resize: none;
 }

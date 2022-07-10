@@ -19,6 +19,9 @@ import * as anchor from '@project-serum/anchor';
 import { DEFAULT_TIMEOUT } from './candyMachine/connection';
 import { ToastContainer } from 'react-toastify';
 import AuthPasswordForget from 'components/AuthPasswordForget';
+import DashboardPage from 'views/DashboardPage';
+import MyMintsPage from 'views/MyMintsPage';
+import LayoutDashboard from 'layouts/LayoutDashboard';
 
 function App() {
   const solNetwork = WalletAdapterNetwork.Devnet;
@@ -81,6 +84,11 @@ function App() {
                   <Route path='login' element={<AuthLogin/>}/>
                   <Route path='register' element={<AuthRegister/>}/>
                   <Route path='forget' element={<AuthPasswordForget/>}/>
+                </Route>
+
+                <Route path='dashboard' element={<LayoutDashboard/>}>
+                  <Route path='' element={<DashboardPage/>}/>
+                  <Route path='my-mints' element={<MyMintsPage/>}/>
                 </Route>
               </Routes>
             </div>

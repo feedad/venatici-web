@@ -25,6 +25,11 @@ button.btn {
     background-color: $white;
     color: $primary;;
   }
+
+  &.btn-grey {
+    background-color: rgba(var(--bs-white-rgb), .2);
+    color: var(--bs-white);
+  }
 }
 
 .tags {
