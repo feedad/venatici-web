@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
+import { useForm } from 'react-hook-form';
 
 export default function MyMintsPage() {
   const [showForm, setShowForm] = useState(false);
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
 
   return (
     <>
@@ -22,14 +24,14 @@ export default function MyMintsPage() {
                 <div className='label'>NFT Name</div>
                 <div className='sublabel'>What is the collection name</div>
               </div>
-              <input type="text" className="form-control form-control-grey" placeholder='Signal Boost' />
+              <input type="text" className="form-control form-control-grey" placeholder='Signal Boost' {...register('nftName')} />
             </div>
             <div>
               <div className="label-with-sublabel">
                 <div className='label'>Project Symbol</div>
                 <div className='sublabel'>Similiar to stock ticker</div>
               </div>
-              <input type="text" className="form-control form-control-grey" placeholder='SB' />
+              <input type="text" className="form-control form-control-grey" placeholder='SB' {...register('projectSymbol')} />
             </div>
           </div>
           <div className="row row-cols-2 mb-4">
@@ -38,22 +40,38 @@ export default function MyMintsPage() {
                 <div className='label'>Project Supply</div>
                 <div className='sublabel'>How many NFT will be created</div>
               </div>
-              <input type="number" className="form-control form-control-grey" placeholder='1111' />
+              <input type="number" className="form-control form-control-grey" placeholder='1111' {...register('projectSupply')} />
             </div>
             <div>
               <div className="label-with-sublabel">
                 <div className='label'>Royalty Percentage</div>
                 <div className='sublabel'>This is for secondary sales</div>
               </div>
-              <input type="number" className="form-control form-control-grey" placeholder='5' />
+              <input type="number" className="form-control form-control-grey" placeholder='5' {...register('royaltyPercentage')} />
             </div>
           </div>
           <div className="mb-4">
+            <div className="label-with-sublabel">
+              <div className='label'>NFT Description</div>
+              <div className='sublabel'>This description for your NFT will appear in the owners wallets.</div>
+            </div>
+            <textarea className='form-control form-control-grey' rows={4} placeholder='1111SIgnal Boost are spreading on Solana.' {...register('nftDescription')}></textarea>
+          </div>
+          <div className="row row-cols-2 mb-4">
+            <div>
               <div className="label-with-sublabel">
-                <div className='label'>NFT Description</div>
-                <div className='sublabel'>This description for your NFT will appear in the owners wallets.</div>
+                <div className='label'>NFT Name</div>
+                <div className='sublabel'>What is the collection name</div>
               </div>
-              <textarea className='form-control form-control-grey' rows={4} placeholder='1111SIgnal Boost are spreading on Solana.'></textarea>
+              <input type="text" className="form-control form-control-grey" placeholder='Signal Boost' {...register('nftName')} />
+            </div>
+            <div>
+              <div className="label-with-sublabel">
+                <div className='label'>Project Symbol</div>
+                <div className='sublabel'>Similiar to stock ticker</div>
+              </div>
+              <input type="text" className="form-control form-control-grey" placeholder='SB' {...register('projectSymbol')} />
+            </div>
           </div>
         </div>
       )}

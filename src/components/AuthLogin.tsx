@@ -20,9 +20,11 @@ export default function AuthLogin() {
         </div>
         <a href="#/">Forget Password</a>
       </div>
-      <button className="btn btn-lg btn-primary-gradient w-100 mb-5" style={{ transform: 'none' }}>
-        Sign In
-      </button>
+      <Link to={'/dashboard'}>
+        <button className="btn btn-lg btn-primary-gradient w-100 mb-5" style={{ transform: 'none' }}>
+          Sign In
+        </button>
+      </Link>
       <hr />
       <div className="d-flex justify-content-center" style={{ gap: 20, marginBottom: '3rem' }}>
         <span>Dont have an account?</span>
