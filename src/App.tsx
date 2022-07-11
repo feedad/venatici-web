@@ -22,6 +22,7 @@ import AuthPasswordForget from 'components/AuthPasswordForget';
 import DashboardPage from 'views/DashboardPage';
 import MyMintsPage from 'views/MyMintsPage';
 import LayoutDashboard from 'layouts/LayoutDashboard';
+import EthMintPage from 'views/EthMintPage';
 
 function App() {
   const solNetwork = WalletAdapterNetwork.Devnet;
@@ -68,15 +69,17 @@ function App() {
                 <Route path='upcoming' element={<UpcomingPage/>}></Route>
                 <Route path='past' element={<PastPage/>}></Route>
                 <Route path='nft' element={<NftPage/>}></Route>
-                <Route path='mint' element={
-                  <MintPage
+                <Route path='mint'>
+                  <Route path='' element={<Navigate to={'solana'} replace/>}/> 
+                  <Route path='eth' element={<EthMintPage/>}/>
+                  <Route path='solana' element={<MintPage
                     candyMachineId={candyMachineId}
                     network={network}
                     connection={connection}
                     rpcHost={rpcHost}
                     txTimeout={DEFAULT_TIMEOUT}
-                  />
-                }></Route>
+                  />}/>
+                </Route>
                 <Route path='about' element={<AboutPage/>}></Route>
 
                 <Route path='auth' element={<AuthPage/>}>

@@ -15,10 +15,13 @@ export default function Navbar() {
     { name: 'Upcoming', icon: navUpcoming, url: '/upcoming' },
     { name: 'Past', icon: navPast, url: '/past' },
     { name: 'Venatici NFT', icon: navNft, url: '/nft', children: [
-      { name: 'Affine Transformations', desc: 'by Nick Schlax' },
-      { name: 'Signal Boost', desc: 'by Jack Dupp' },
+      { name: 'Affine Transformations', desc: 'by Nick Schlax', url: '' },
+      { name: 'Signal Boost', desc: 'by Jack Dupp', url: '' },
     ] },
-    { name: 'Mint', icon: navRug, url: '/mint' },
+    { name: 'Mint', icon: navRug, url: '/mint', children: [
+      { name: 'Solana', desc: 'Solana Mint', url: 'solana' },
+      { name: 'Eth', desc: 'Ethereum Mint', url: 'eth' }
+    ] },
     { name: 'About', icon: navAbout, url: '/about' },
   ];
 
@@ -47,7 +50,7 @@ export default function Navbar() {
               <Dropdown.Menu>
                 {menu.children.map(child => (
                   <Dropdown.Item key={child.name}>
-                    <Link to={menu.url} key={menu.url} style={{ textDecoration: 'none', color: 'black' }}>
+                    <Link to={menu.url + '/' + child.url} key={child.url} style={{ textDecoration: 'none', color: 'black' }}>
                       <div className='fw-bold'>{child.name}</div>
                       <div style={{ fontSize: 12 }}>{child.desc}</div>
                     </Link>
