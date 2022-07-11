@@ -229,8 +229,7 @@ export default class EthMintPage extends React.Component<Props, State> {
               </div>
               <div className='mb-4' style={{ width: 600 }}>Affine Transformations is an in-depth exploration of the abstract aesthetic beauty that exists within the realm of fractal mathematics. Created by combining iterated function systems..</div>
               <div className='mb-4'>
-                {this.isContractReady() ?
-                  !this.isWalletConnected() ? (
+                {!this.isWalletConnected() ? (
                     <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }} disabled={!this.provider} onClick={() => this.connectWallet()}>
                       Connect Wallet
                     </button>
@@ -239,8 +238,9 @@ export default class EthMintPage extends React.Component<Props, State> {
                       Mint
                     </button>
                   )
-                : (
-                  <span className='spinner-border'></span>
+                }
+                {this.state.loading && (
+                  <span className='spinner-border ms-4'></span>
                 )}
               </div>
               {this.state.errorMessage &&
