@@ -5,7 +5,7 @@ import iconWallet from 'assets/images/sidebar/icon-wallets.svg';
 import iconCollections from 'assets/images/sidebar/icon-collections.svg';
 import iconSettings from 'assets/images/sidebar/icon-settings.svg';
 import iconLogout from 'assets/images/sidebar/icon-logout.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
 export default function Sidebar() {
   return (
@@ -14,28 +14,22 @@ export default function Sidebar() {
         <img src="https://avatars.dicebear.com/api/adventurer-neutral/venatici.svg" alt="" className='profile-picture' />
         <div className="name">Venatici</div>
       </div>
-      <Link to={'/dashboard'}>
-        <div className="item active">
-          <img src={iconDashboard} alt="" className="icon" />
-          <div className="label">Dashboard</div>
-        </div>
-      </Link>
-      <Link to={'/dashboard/my-mints'}>
-        <div className="item">
+      <NavLink className='item' to={'/dashboard/index'}>
+        <img src={iconDashboard} alt="" className="icon" />
+        <div className="label">Dashboard</div>
+      </NavLink>
+      <NavLink className='item' to={'/dashboard/my-mints'}>
           <img src={iconMyMints} alt="" className="icon" />
           <div className="label">My Mints</div>
-        </div>
-      </Link>
+      </NavLink>
       <div className="item">
         <img src={iconWallet} alt="" className="icon" />
         <div className="label">Wallet</div>
       </div>
-      <Link to={'/dashboard/collections'}>
-        <div className="item">
+      <NavLink className='item' to={'/dashboard/collections'}>
           <img src={iconCollections} alt="" className="icon" />
           <div className="label">Collections</div>
-        </div>
-      </Link>
+      </NavLink>
       <div className="item">
         <img src={iconSettings} alt="" className="icon" />
         <div className="label">Settings</div>

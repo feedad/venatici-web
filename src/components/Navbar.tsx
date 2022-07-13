@@ -62,7 +62,7 @@ export default function Navbar() {
         })}
         <div className='text-end' style={{ flexGrow: 1 }}>
           <Link to={'/auth'}>
-            <button className='btn btn-primary-gradient px-5'>
+            <button className='btn btn-primary-gradient px-5 text-uppercase'>
               <div className="content">Dashboard</div>
             </button>
           </Link>
