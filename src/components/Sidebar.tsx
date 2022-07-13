@@ -30,10 +30,12 @@ export default function Sidebar() {
         <img src={iconWallet} alt="" className="icon" />
         <div className="label">Wallet</div>
       </div>
-      <div className="item">
-        <img src={iconCollections} alt="" className="icon" />
-        <div className="label">Collections</div>
-      </div>
+      <Link to={'/dashboard/collections'}>
+        <div className="item">
+          <img src={iconCollections} alt="" className="icon" />
+          <div className="label">Collections</div>
+        </div>
+      </Link>
       <div className="item">
         <img src={iconSettings} alt="" className="icon" />
         <div className="label">Settings</div>

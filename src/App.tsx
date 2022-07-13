@@ -23,6 +23,7 @@ import DashboardPage from 'views/DashboardPage';
 import MyMintsPage from 'views/MyMintsPage';
 import LayoutDashboard from 'layouts/LayoutDashboard';
 import EthMintPage from 'views/EthMintPage';
+import CollectionsPage from 'views/CollectionsPage';
 
 function App() {
   const solNetwork = WalletAdapterNetwork.Devnet;
@@ -92,6 +93,7 @@ function App() {
                 <Route path='dashboard' element={<LayoutDashboard/>}>
                   <Route path='' element={<DashboardPage/>}/>
                   <Route path='my-mints' element={<MyMintsPage/>}/>
+                  <Route path='collections' element={<CollectionsPage/>}/>
                 </Route>
               </Routes>
             </div>
