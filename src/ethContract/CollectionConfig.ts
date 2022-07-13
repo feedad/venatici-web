@@ -9,11 +9,11 @@ const CollectionConfig: CollectionConfigInterface = {
   // The contract name can be updated using the following command:
   // yarn rename-contract NEW_CONTRACT_NAME
   // Please DO NOT change it manually!
-  contractName: 'MacacaNFT',
-  tokenName: 'Macaca Clubs',
-  tokenSymbol: 'MCC',
-  hiddenMetadataUri: 'ipfs://Qmcddj7CxJTXCCHRof5cipGSfDroRGADEYM9jc8AD6To7o/hidden.json',
-  maxSupply: 20,
+  contractName: 'MythOfAshaNFT',
+  tokenName: 'Myth of Asha',
+  tokenSymbol: 'MOA',
+  hiddenMetadataUri: 'ipfs://QmXSAXvavRNHwcLrUwCm3aMQZG3psPt51s9qzhML6bFCKt/hidden.json',
+  maxSupply: 28,
   whitelistSale: {
     price: 0.005,
     maxMintAmountPerTx: 1,
@@ -23,11 +23,11 @@ const CollectionConfig: CollectionConfigInterface = {
     maxMintAmountPerTx: 2,
   },
   publicSale: {
-    price: 0.009,
+    price: 0.01,
     maxMintAmountPerTx: 5,
   },
-  contractAddress: '0x7d43134E33A73E1412e030698319C4F3cfF8Fa29',
-  marketplaceIdentifier: 'my-nft-token',
+  contractAddress: '0x709Cf4DC3e444C8Feef2Af3ECD506c731Ca12ba1',
+  marketplaceIdentifier: 'myth-of-asha',
   marketplaceConfig: Marketplaces.openSea,
   whitelistAddresses,
 };

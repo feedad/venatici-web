@@ -2,7 +2,7 @@ import React from 'react';
 import { ethers, BigNumber, utils } from 'ethers'
 import { ExternalProvider, Web3Provider } from '@ethersproject/providers';
 import detectEthereumProvider from '@metamask/detect-provider';
-import { MacacaNFT as NftContractType } from '../ethContract/NftContractType';
+import { MythOfAshaNFT as NftContractType } from '../ethContract/NftContractType';
 import CollectionConfig from '../ethContract/CollectionConfig';
 import NetworkConfigInterface from '../interfaces/NetworkConfigInterface';
 import CollectionStatus from '../components/EthCollectionStatus';
@@ -220,8 +220,8 @@ export default class EthMintPage extends React.Component<Props, State> {
               )}
             </div>
             <div>
-              <div className='fw-bold' style={{ fontSize: 42 }}>Macaca Club</div>
-              <div style={{ fontSize: 32 }}>by Macaca Club</div>
+              <div className='fw-bold' style={{ fontSize: 42 }}>Myth of Asha</div>
+              <div style={{ fontSize: 32 }}>by Myth of Asha</div>
               <div className='d-flex mb-3 mt-3' style={{ gap: 30, fontSize: 28 }}>
                 <i className="far fa-globe"></i>
                 <i className="fab fa-discord"></i>

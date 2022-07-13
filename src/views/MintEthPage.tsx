@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Navbar from '../components/Navbar'
 import ProgressBar from '../components/ProgressBar'
 import { toast } from 'react-toastify';
-import { MacacaNFT as ContractType } from 'ethContract/NftContractType';
+import { MythOfAshaNFT as ContractType } from 'ethContract/NftContractType';
 import { Web3Provider, ExternalProvider } from '@ethersproject/providers';
 import NetworkConfigInterface from 'ethContract/NetworkConfigInterface';
 import * as Networks from '../ethContract/Networks';
