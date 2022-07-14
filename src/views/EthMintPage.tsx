@@ -196,24 +196,26 @@ export default class EthMintPage extends React.Component<Props, State> {
           <div className="d-flex mb-4" style={{ gap: 20 }}>
             <div className='text-center' style={{ flexGrow: 1 }}>
               <img src={this.nftShowcase} alt="" className='rounded mb-4 d-block mx-auto' style={{ width: 460, height: 460, objectFit: 'cover' }} />
+              {this.isWalletConnected() && !this.isContractReady() && (
+                <span className='spinner-border ms-4'></span>
+              )}
               {this.isContractReady() && (
                 <>
                   <div className='text-center mx-auto' style={{ width: 430 }}>
-                    <ProgressBar value={(this.state.totalSupply || 0) / (this.state.maxSupply || 0) * 100}/>
-                    <div className='fw-bold mt-3' style={{ fontSize: 20 }}>{this.state.maxSupply - this.state.totalSupply} / {this.state.maxSupply}</div>
+                    <ProgressBar value={(this.state.totalSupply || 0)} max={(this.state.maxSupply || 0)} version={2} />
+                    {/* <ProgressBar value={(this.state.totalSupply || 0) / (this.state.maxSupply || 0) * 100} version={1} /> */}
+                    {/* <div className='fw-bold mt-3' style={{ fontSize: 20 }}>{this.state.maxSupply - this.state.totalSupply} / {this.state.maxSupply}</div>
                     <div className="fw-bold mt-2" style={{ fontSize: 16 }}>
                       <span>Total Items {this.state.maxSupply}</span>
                       <span className="mx-3">|</span>
                       <span>
                         Price {utils.formatEther(this.state.tokenPrice)} {this.state.networkConfig.symbol}
                       </span>
-                    </div>
+                    </div> */}
                     <div className='mt-4'>
-                      <Link to={'/nft'}>
-                        <button className="btn btn-white px-4 rounded-pill fw-bold" style={{ transform: 'none' }}>
-                          View Collection
-                        </button>
-                      </Link>
+                      <button className="btn btn-primary-gradient px-5 rounded border-white fw-bold w-100" style={{ transform: 'none', borderWidth: 2 }} disabled={this.state.loading || this.state.isPaused} onClick={() => this.mintTokens(1)}>
+                        MINT ( {utils.formatEther(this.state.tokenPrice)} {this.state.networkConfig.symbol} )
+                      </button>
                     </div>
                   </div>
                 </>
@@ -234,9 +236,11 @@ export default class EthMintPage extends React.Component<Props, State> {
                       Connect Wallet
                     </button>
                   ) : (
-                    <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }} disabled={this.state.loading || this.state.isPaused} onClick={() => this.mintTokens(1)}>
-                      Mint
-                    </button>
+                    <Link to={'/nft'}>
+                      <button className="btn btn-white px-4 rounded-pill fw-bold" style={{ transform: 'none' }}>
+                        View Collection
+                      </button>
+                    </Link>
                   )
                 }
                 {this.state.loading && (
