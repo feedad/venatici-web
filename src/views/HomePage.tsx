@@ -15,21 +15,21 @@ import Footer from '../components/Footer';
 
 export default function HomePage() {
   const featuresList = [
-    { name: 'Bot-Free', desc: '100% bot-free. Our custom contract is changed regularly so the bots never learn.', icon: IconBotFree },
+    // { name: 'Bot-Free', desc: '100% bot-free. Our custom contract is changed regularly so the bots never learn.', icon: IconBotFree },
     { name: 'Image Generation', desc: 'Bring your own assets, or use our collection builder to preview your work instantly.', icon: IconImageGeneration },
     { name: 'Custom Contracts', desc: 'By using custom contracts, we tailor your mint to meet the needs of your roadmap or utility.', icon: IconCustomContracts },
     { name: 'Whitelist', desc: 'We support the use of SPL Tokens or custom on-chain whitelist.', icon: IconWhitelist },
     { name: 'Cooldown', desc: 'Custom cooldown feature to maximize number of unique holders during mint.', icon: IconCooldown },
     { name: 'Mint Page', desc: 'Create your mint page however it suites your project\'s brand identity.', icon: IconMintPage },
-    { name: 'Short-Notice', desc: 'We\'re always around! We can deploy a mint in less than 4 hours if need be.', icon: IconShortNotice },
-    { name: 'Support 24/7', desc: 'We are always online on Discord and are always live with you during minting.', icon: IconSupport },
+    // { name: 'Short-Notice', desc: 'We\'re always around! We can deploy a mint in less than 4 hours if need be.', icon: IconShortNotice },
+    // { name: 'Support 24/7', desc: 'We are always online on Discord and are always live with you during minting.', icon: IconSupport },
   ];
 
   const manageYourMintList = [
-    'See revenues from mint in real-time.',
+    // 'See revenues from mint in real-time.',
     'Manage mint page image and text in real-time.',
     'Download hashlists and necessary secondary data.',
-    'Track your progress with interactive charts.',
+    // 'Track your progress with interactive charts.',
     '"Powered By Venatici" seal of authenticity.'
   ];
 
@@ -64,10 +64,10 @@ export default function HomePage() {
         <div style={{ position: 'absolute', left: 0, top: 520, maxWidth: '95vw', overflowX: 'clip', overflowY: 'visible' }}>
           <img src={require('../assets/images/home-about-bg.png')} alt="" style={{ width: 1600 }} />
           <div style={{ width: 600, marginLeft: 60, marginTop: -800 }}>
-            <button className="btn btn-black-gradient mb-4 px-4">
-              <div className="content">Find out more</div>
+            <button className="btn btn-primary-gradient mb-4 px-5 text-uppercase" style={{ transform: 'none' }}>
+              <div className="content" style={{ transform: 'none' }}>Find out more</div>
             </button>
-            <div>Our Launchpad's revenue is shared amongst Venatici NFT holders. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
+            <div>Launch your NFT from concept to deployment. Easy-to-use Launchpad from community to community.</div>
           </div>
         </div>
 
@@ -80,7 +80,7 @@ export default function HomePage() {
         <section>
           <div style={{ width: 640, marginTop: 120 }}>
             <div className='fw-bold mb-4' style={{ fontSize: '3rem' }}>A Revenue Sharing Launchpad on Solana</div>
-            <div className='mb-4' style={{ fontSize: '1.2rem' }}>We launch your NFT from concept to deployment, backed by our community of holders who earn 50% of earnings weekly.</div>
+            <div className='mb-4' style={{ fontSize: '1.2rem' }}>We launch your NFT from concept to deployment, backed by our community for other community.</div>
             <button className="btn btn-black-gradient px-4">
               <div className="content">Launch with us</div>
             </button>
@@ -119,7 +119,18 @@ export default function HomePage() {
       {/* home: popular launches (2) */}
       <div className="mb-5">
         <div className="fw-bold mb-3" style={{ fontSize: '2rem' }}>Popular Launches</div>
-        <div className="row row-cols-lg-4 row-cols-md-3 row-cols-sm-2 gx-5 gy-2">
+        <div className="d-flex justify-content-center" style={{ flexWrap: 'wrap' }}>
+          {featuresList.map(feature => (
+            <div className='text-center p-5' key={feature.name} style={{ flex: '1 0 30%', maxWidth: 370 }}>
+              <img src={feature.icon} alt="" className='mb-2' />
+              <div className='fw-bold mb-3' style={{ color: '#3CD79F', fontSize: '1.5rem' }}>{feature.name}</div>
+              <div>{feature.desc}</div>
+            </div>
+          ))}
+        </div>
+
+        {/* v1 */}
+        {/* <div className="row row-cols-lg-3 row-cols-md-3 row-cols-sm-2 gx-5 gy-2">
           {featuresList.map(feature => (
             <div className='text-center p-5' key={feature.name}>
               <img src={feature.icon} alt="" className='mb-2' />
@@ -127,7 +138,7 @@ export default function HomePage() {
               <div>{feature.desc}</div>
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       {/* home: bottom */}
