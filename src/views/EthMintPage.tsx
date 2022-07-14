@@ -12,6 +12,7 @@ import { toast } from 'react-toastify';
 import Navbar from 'components/Navbar';
 import ProgressBar from 'components/ProgressBar';
 import { Link } from 'react-router-dom';
+import { NftConfig } from 'configs/NftConfig';
 
 const ContractAbi = require('../ethContract/Contract.json').abi;
 
@@ -222,14 +223,16 @@ export default class EthMintPage extends React.Component<Props, State> {
               )}
             </div>
             <div>
-              <div className='fw-bold' style={{ fontSize: 42 }}>Myth of Asha</div>
-              <div style={{ fontSize: 32 }}>by Myth of Asha</div>
+              <div className='fw-bold' style={{ fontSize: 42 }}>{NftConfig.name}</div>
+              <div style={{ fontSize: 32 }}>by {NftConfig.creator}</div>
               <div className='d-flex mb-3 mt-3' style={{ gap: 30, fontSize: 28 }}>
                 <i className="far fa-globe"></i>
                 <i className="fab fa-discord"></i>
                 <i className="fab fa-twitter"></i>
               </div>
-              <div className='mb-4' style={{ width: 600 }}>Affine Transformations is an in-depth exploration of the abstract aesthetic beauty that exists within the realm of fractal mathematics. Created by combining iterated function systems..</div>
+              <div className='mb-4' style={{ width: 600 }}>
+                {NftConfig.desc.map(d => <p>{d}</p>)}
+              </div>
               <div className='mb-4'>
                 {!this.isWalletConnected() ? (
                     <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }} disabled={!this.provider} onClick={() => this.connectWallet()}>
@@ -261,9 +264,7 @@ export default class EthMintPage extends React.Component<Props, State> {
           <div className='row row-cols-2 g-5 mb-5'>
             <div>
               <div className="fw-bold" style={{ fontSize: 48 }}>About</div>
-              <div className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.</div>
-              <div className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.</div>
-              <div className="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor inreprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt inculpa qui officia deserunt mollit anim id est laborum.</div>
+          {NftConfig.desc.map(d => <div className='mb-3'>{d}</div>)}
             </div>
             <div>
               <div className='mint-tabs mb-3'>
@@ -273,10 +274,10 @@ export default class EthMintPage extends React.Component<Props, State> {
 
               {this.state.activeTabs==='roadmap' && (
                 <div>
-                  {[0,1,2,3].map(i => (
+                  {NftConfig.roadmap.map((roadmap, i) => (
                     <div className='mb-3' key={i}>
-                      <div className='fw-bold mb-1'>Step {i+1}:</div>
-                      <div>Elit proident aliquip proident et quis eu velit aliqua sint. Qui culpa et aliqua cupidatat aute ut. Labore ullamco amet proident in. Cupidatat tempor ad sit commodo. Esse enim duis adipisicing sunt dolor mollit voluptate ut.</div>
+                      <div className='fw-bold mb-1'>{roadmap.title}:</div>
+                      <div>{roadmap.desc}</div>
                     </div>
                   ))}
                 </div>
