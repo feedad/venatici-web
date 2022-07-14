@@ -9,6 +9,7 @@ import {
   removeAccountChangeListener,
 } from '@identity.com/solana-gateway-ts';
 import { ButtonProps } from 'react-bootstrap';
+import { formatNumber } from './utils';
 
 // export const CTAButton = styled(Button)`
 //   width: 100%;
@@ -21,9 +22,9 @@ import { ButtonProps } from 'react-bootstrap';
 //   font-weight: bold;
 // `; // add your own styles here
 
-export const CTAButton = ({ disabled, onClick }: ButtonProps) => (
-  <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }} onClick={onClick} disabled={disabled}>
-    Mint
+export const CTAButton = ({ disabled, onClick, children }: ButtonProps) => (
+  <button className="btn btn-primary-gradient px-5 rounded border-white fw-bold w-100" style={{ transform: 'none', borderWidth: 2 }} onClick={onClick} disabled={disabled}>
+    {(children)}
   </button>
 );
 
@@ -56,10 +57,12 @@ export const MintButton = ({
       candyMachine?.state.isPresale ||
       candyMachine?.state.isWhitelistOnly
     ) {
-      return 'WHITELIST MINT';
+      const whitelistPrice = formatNumber.asNumber(candyMachine.state.whitelistMintSettings?.discountPrice!);
+      return `WHITELIST MINT ( ${whitelistPrice} ◎ )`;
     }
 
-    return 'MINT';
+    const price = formatNumber.asNumber(candyMachine?.state.price);
+    return `MINT ( ${price} ◎ )`;
   };
 
   useEffect(() => {

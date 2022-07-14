@@ -473,48 +473,9 @@ export default function MintPage(props: MintPageProps) {
           {candyMachine?.state && (
             <>
               <div className='text-center mx-auto' style={{ width: 430 }}>
-                <ProgressBar value={(candyMachine?.state.itemsRedeemed || 0) / (candyMachine?.state.itemsAvailable || 0) * 100}/>
-                <div className='fw-bold mt-3' style={{ fontSize: 20 }}>{candyMachine?.state.itemsRemaining} / {candyMachine?.state.itemsAvailable}</div>
-                <div className="fw-bold mt-2" style={{ fontSize: 16 }}>
-                  <span>Total Items {candyMachine?.state.itemsAvailable}</span>
-                   <span className="mx-3">|</span>
-                   <span>
-                    {isWhitelistUser && discountPrice ? 'Discounted Price ' : 'Price '}
-                    {isWhitelistUser && discountPrice ? `${formatNumber.asNumber(discountPrice)} ` : `${formatNumber.asNumber(candyMachine.state.price)}`}
-                    <i className="fa fa-coin ms-1"></i>
-                   </span>
+                <div className="mb-3">
+                  <ProgressBar value={(candyMachine?.state.itemsRedeemed || 0)} max={(candyMachine?.state.itemsAvailable || 0)} version={2} />
                 </div>
-                <div className='mt-4'>
-                  <Link to={'/nft'}>
-                    <button className="btn btn-white px-4 rounded-pill fw-bold" style={{ transform: 'none' }}>
-                      View Collection
-                    </button>
-                  </Link>
-                </div>
-              </div>
-            </>
-          )}
-        </div>
-        <div>
-          <div className='fw-bold' style={{ fontSize: 42 }}>Myth of Asha</div>
-          <div style={{ fontSize: 32 }}>by Myth of Asha</div>
-          <div className='d-flex mb-3 mt-3' style={{ gap: 30, fontSize: 28 }}>
-            <i className="far fa-globe"></i>
-            <i className="fab fa-discord"></i>
-            <i className="fab fa-twitter"></i>
-          </div>
-          <div className='mb-4' style={{ width: 600 }}>Affine Transformations is an in-depth exploration of the abstract aesthetic beauty that exists within the realm of fractal mathematics. Created by combining iterated function systems..</div>
-          <div className='mb-4'>
-            {!wallet.connected ? (
-              <WalletMultiButton/>
-              // <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }} onClick={() => setVisible(true)}>
-              //   Connect Wallet
-              // </button>
-            ) : (
-              // <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }}>
-              //   Mint
-              // </button>
-              <>
                 {candyMachine?.state.isActive &&
                 candyMachine.state.gatekeeper &&
                 wallet.publicKey &&
@@ -626,7 +587,46 @@ export default function MintPage(props: MintPageProps) {
                     }
                   />
                 )}
-              </>
+
+                {/* version 1 */}
+                {/* <ProgressBar value={(candyMachine?.state.itemsRedeemed || 0) / (candyMachine?.state.itemsAvailable || 0) * 100} version={1} /> */}
+                {/* <div className="fw-bold mt-2" style={{ fontSize: 16 }}>
+                  <span>Total Items {candyMachine?.state.itemsAvailable}</span>
+                   <span className="mx-3">|</span>
+                   <span>
+                    {isWhitelistUser && discountPrice ? 'Discounted Price ' : 'Price '}
+                    {isWhitelistUser && discountPrice ? `${formatNumber.asNumber(discountPrice)} ` : `${formatNumber.asNumber(candyMachine.state.price)}`}
+                    <i className="fa fa-coin ms-1"></i>
+                   </span>
+                </div> */}
+              </div>
+            </>
+          )}
+        </div>
+        <div>
+          <div className='fw-bold' style={{ fontSize: 42 }}>Myth of Asha</div>
+          <div style={{ fontSize: 32 }}>by Myth of Asha</div>
+          <div className='d-flex mb-3 mt-3' style={{ gap: 30, fontSize: 28 }}>
+            <i className="far fa-globe"></i>
+            <i className="fab fa-discord"></i>
+            <i className="fab fa-twitter"></i>
+          </div>
+          <div className='mb-4' style={{ width: 600 }}>Affine Transformations is an in-depth exploration of the abstract aesthetic beauty that exists within the realm of fractal mathematics. Created by combining iterated function systems..</div>
+          <div className='mb-4'>
+            {!wallet.connected ? (
+              <WalletMultiButton/>
+              // <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }} onClick={() => setVisible(true)}>
+              //   Connect Wallet
+              // </button>
+            ) : (
+              // <button className="btn btn-primary-gradient px-5 rounded-pill border-white fw-bold" style={{ transform: 'none', borderWidth: 4 }}>
+              //   Mint
+              // </button>
+              <Link to={'/nft'}>
+                <button className="btn btn-white px-4 rounded-pill fw-bold" style={{ transform: 'none' }}>
+                  View Collection
+                </button>
+              </Link>
             )}
           </div>
           {/* {candyMachine && (
