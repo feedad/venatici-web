@@ -12,12 +12,12 @@ import { Dropdown } from 'react-bootstrap';
 export default function Navbar() {
   const menuList = [
     { name: 'Home', icon: navHome, url: '/' },
-    { name: 'Upcoming', icon: navUpcoming, url: '/upcoming' },
-    { name: 'Past', icon: navPast, url: '/past' },
-    { name: 'Venatici NFT', icon: navNft, url: '/nft', children: [
-      { name: 'Affine Transformations', desc: 'by Nick Schlax', url: '' },
-      { name: 'Signal Boost', desc: 'by Jack Dupp', url: '' },
-    ] },
+    // { name: 'Upcoming', icon: navUpcoming, url: '/upcoming' },
+    // { name: 'Past', icon: navPast, url: '/past' },
+    // { name: 'Venatici NFT', icon: navNft, url: '/nft', children: [
+    //   { name: 'Affine Transformations', desc: 'by Nick Schlax', url: '' },
+    //   { name: 'Signal Boost', desc: 'by Jack Dupp', url: '' },
+    // ] },
     { name: 'Mint', icon: navRug, url: '/mint', children: [
       { name: 'Solana', desc: 'Solana Mint', url: 'solana' },
       { name: 'Eth', desc: 'Ethereum Mint', url: 'eth' }
@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <div className='d-flex align-items-center' style={{ gap: 20 }}>
       <img src={logoVenatici} alt="" style={{ width: 200, height: 200 }} />
-      <div className='d-flex align-items-center' style={{ backgroundColor: '#0A0A0A', gap: 35, padding: '10px 30px', flexGrow: 1, boxShadow: 'inset 0 -10px 10px -10px #fff', borderRadius: 10 }}>
+      <div className='d-flex align-items-center justify-content-end' style={{ backgroundColor: '#0A0A0A', gap: 35, padding: '10px 30px', flexGrow: 1, boxShadow: 'inset 0 -10px 10px -10px #fff', borderRadius: 10 }}>
         {menuList.map(menu => {
           if (!menu.children) return (
             <Link to={menu.url} key={menu.url} style={{ textDecoration: 'none', color: 'white' }}>
@@ -60,7 +60,7 @@ export default function Navbar() {
             </Dropdown>
           )
         })}
-        <div className='text-end' style={{ flexGrow: 1 }}>
+        <div className='text-end'>
           <Link to={'/auth'}>
             <button className='btn btn-primary-gradient px-5 text-uppercase'>
               <div className="content">Dashboard</div>
