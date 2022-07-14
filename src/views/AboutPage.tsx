@@ -2,19 +2,19 @@ import React from 'react'
 import Navbar from '../components/Navbar'
 import PerfectScrollbar from 'react-perfect-scrollbar';
 
-import IconArtistCuration from '../assets/images/about-artist-curation.svg';
-import IconCreative from '../assets/images/about-creative.svg';
+import IconArtistIncubator from '../assets/images/about-artist-curation.svg';
+import IconProjectIncubator from '../assets/images/about-creative.svg';
 import IconDao from '../assets/images/about-dao.svg';
-import IconNftStudio from '../assets/images/about-nft-studio.svg';
+import IconCommunitySpace from '../assets/images/about-nft-studio.svg';
 import CardRoadmap from '../components/CardRoadmap';
 import Footer from '../components/Footer';
 
 export default function AboutPage() {
   const roadmapList = [
-    { title: 'Artist Curation', icon: IconArtistCuration, desc: 'As a studio, our main focus as a team right now is curating talented artists from all around the world, and help them build their own brand and spread their message' },
-    { title: 'Creative & Talent Agency', icon: IconCreative, desc: "We are looking to incubate artists that we collaborate with, and also groom in-house artists that we will manage as talents. This allows the artist to solely focus on the art, and we’ll focus on building them as a brand." },
-    { title: 'Dao', icon: IconDao, desc: "We strongly believe that community-led platforms is the best way to always be grounded and responsive to change. Abstract Labs membership holders would get access to a DAO, allowing them to come up with new initiatives to improve the studio." },
-    { title: 'NFT Studio', icon: IconNftStudio, desc: "As our platform develops, we are also looking to open an NFT Studio to showcase our artist’s NFT collections. We plan to open it to the public, with the goal of spreading the NFT movement all around the world." },
+    { title: 'Artist Incubator', icon: IconArtistIncubator, desc: 'As a studio, our main focus as a team right now is curating talented artists from all around the world, and help them build their own brand and spread their message' },
+    { title: 'Project Incubator', icon: IconProjectIncubator, desc: "We are looking to incubate artists that we collaborate with, and also groom in-house artists that we will manage as talents. This allows the artist to solely focus on the art, and we’ll focus on building them as a brand." },
+    { title: 'DAO', icon: IconDao, desc: "We strongly believe that community-led platforms is the best way to always be grounded and responsive to change. Abstract Labs membership holders would get access to a DAO, allowing them to come up with new initiatives to improve the studio." },
+    { title: 'Community Space', icon: IconCommunitySpace, desc: "As our platform develops, we are also looking to open an NFT Studio to showcase our artist’s NFT collections. We plan to open it to the public, with the goal of spreading the NFT movement all around the world." },
   ];
 
   return (
@@ -50,7 +50,7 @@ export default function AboutPage() {
       </div>
 
       {/* about: collaboration */}
-      <div style={{ marginBottom: '5rem' }}>
+      {/* <div style={{ marginBottom: '5rem' }}>
         <PerfectScrollbar options={{ suppressScrollY: true }} style={{ paddingBottom: '4rem' }}>
           <div className="d-flex align-items-center" style={{ gap: 50 }}>
             <div className='d-flex align-items-center justify-content-center' style={{ backgroundColor: '#0F0F0F', height: 250, width: 350, flexShrink: 0 }}>
@@ -65,7 +65,7 @@ export default function AboutPage() {
             ))}
           </div>
         </PerfectScrollbar>
-      </div>
+      </div> */}
 
       {/* footer */}
       <div className="container">

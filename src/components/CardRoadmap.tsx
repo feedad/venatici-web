@@ -12,7 +12,7 @@ export default function CardRoadmap({ title, desc, icon, iconBottom = false }: P
     <div className='p-4' style={{ borderRadius: '1rem', backgroundColor: '#55525255', width: 550, position: 'relative', overflow: 'hidden' }}>
       <div className="d-flex justify-content-between align-items-center mb-4 position-relative" style={{ zIndex: 100 }}>
         <div className='rounded-circle' style={{ border: 'solid 3px white', width: 28, height: 28 }}></div>
-        <div className='text-end fw-bold' style={{ fontSize: '1.5rem' }}>{title}</div>
+        <div className='text-end fw-bold' style={{ fontSize: '1.8rem' }}>{title}</div>
       </div>
       <div className='text-end position-relative' style={{ marginRight: 130, zIndex: 100 }}>{desc}</div>
 
