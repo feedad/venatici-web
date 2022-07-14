@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.8c45f701.css",
-    "main.js": "/static/js/main.04dd47f6.js",
+    "main.js": "/static/js/main.33a4fec2.js",
     "static/js/431.429a4311.chunk.js": "/static/js/431.429a4311.chunk.js",
     "static/js/126.fa4820da.chunk.js": "/static/js/126.fa4820da.chunk.js",
     "static/js/489.d88a5812.chunk.js": "/static/js/489.d88a5812.chunk.js",
@@ -26,21 +26,15 @@
     "static/media/moonbirds.avif": "/static/media/moonbirds.491d8a3eaaff3a876c02.avif",
     "static/media/home-community-bg.png": "/static/media/home-community-bg.76076136451ee92d7af4.png",
     "static/media/logo-venatici.svg": "/static/media/logo-venatici.53c23b20769fea7144a9a78172fc9acc.svg",
-    "static/media/nav-nft.svg": "/static/media/nav-nft.b3f4b3e8ca9aead32ca2325544a05463.svg",
     "static/media/home-custom-contracts.svg": "/static/media/home-custom-contracts.c7e56d2ccc5c4eb92709d6f7bf0f2b25.svg",
-    "static/media/home-short-notice.svg": "/static/media/home-short-notice.cd14f6b410204b01d8f8eafab18c29fb.svg",
     "static/media/about-creative.svg": "/static/media/about-creative.db43b126c4604dc69ee30cb9b19a148a.svg",
     "static/media/nav-rug.svg": "/static/media/nav-rug.440e6e1d8ae7deb56dc4e9cb975eb01a.svg",
     "static/media/home-image-generation.svg": "/static/media/home-image-generation.1e30bd52540f7e6bf0c6855d3a347be1.svg",
     "static/media/home-whitelist.svg": "/static/media/home-whitelist.3ccfb88a8cfe973d4c99d304326e26a0.svg",
-    "static/media/home-bot-free.svg": "/static/media/home-bot-free.e4b2c7b8499577f5d893a59b770afbb2.svg",
-    "static/media/home-support.svg": "/static/media/home-support.c1ff71bd2ee3a8fb37ef48ca46592585.svg",
     "static/media/home-mint-page.svg": "/static/media/home-mint-page.02a62409ab1e18a1d725200a585fcf09.svg",
     "static/media/home-cooldown.svg": "/static/media/home-cooldown.ba4aedc469184afb67c0e5dbbcea5802.svg",
     "static/media/about-dao.svg": "/static/media/about-dao.b23e06a4502e0285d483139f611a81dd.svg",
     "static/media/about-artist-curation.svg": "/static/media/about-artist-curation.b122feb41c86708937f96aad87e9f305.svg",
-    "static/media/nav-upcoming.svg": "/static/media/nav-upcoming.1cea8877fded85086c8bc828ae0f3d00.svg",
-    "static/media/nav-past.svg": "/static/media/nav-past.3ccf6f6f56b36d773ca4c5f3d3bc55fc.svg",
     "static/media/nav-about.svg": "/static/media/nav-about.6f85ea80895c053af4216d86c9006b75.svg",
     "static/media/about-nft-studio.svg": "/static/media/about-nft-studio.0a521958ad285189570fadc5dbe4bb41.svg",
     "static/media/icon-wallets.svg": "/static/media/icon-wallets.1a0b1950de5ab1bb8397a0ee9e37a14e.svg",
@@ -52,7 +46,7 @@
     "static/media/icon-my-mints.svg": "/static/media/icon-my-mints.fa0846ace9b511706b2d80930b95ff17.svg",
     "static/media/icon-collections.svg": "/static/media/icon-collections.046d7c7ea1f970bfe22a5434b738d275.svg",
     "main.8c45f701.css.map": "/static/css/main.8c45f701.css.map",
-    "main.04dd47f6.js.map": "/static/js/main.04dd47f6.js.map",
+    "main.33a4fec2.js.map": "/static/js/main.33a4fec2.js.map",
     "431.429a4311.chunk.js.map": "/static/js/431.429a4311.chunk.js.map",
     "126.fa4820da.chunk.js.map": "/static/js/126.fa4820da.chunk.js.map",
     "489.d88a5812.chunk.js.map": "/static/js/489.d88a5812.chunk.js.map",
@@ -62,6 +56,6 @@
   },
   "entrypoints": [
     "static/css/main.8c45f701.css",
-    "static/js/main.04dd47f6.js"
+    "static/js/main.33a4fec2.js"
   ]
 }
