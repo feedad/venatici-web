@@ -59,6 +59,7 @@ function App() {
     rpcHost ? rpcHost : anchor.web3.clusterApiUrl('devnet'),
   );
 
+  // update env
   return (
     <ConnectionProvider endpoint={endpoint}>
       <WalletProvider wallets={wallets}>
